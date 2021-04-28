@@ -62,7 +62,7 @@ spec:
       workspace: maven-settings
     params:
     - name: GOALS
-      value: ["package", "-f", "spring-petclinic"]
+      value: ["package", "-f", "spring-petclinic/pom.xml", "-Dspring.profiles.active=default"]
   - name: code-analysis
     taskRef:
       name: maven
@@ -112,7 +112,7 @@ spec:
     - name: GOALS
       value:
       - deploy
-      - -f 
+      - -f
       - spring-petclinic
       - -DskipTests=true
       - -DaltDeploymentRepository=nexus::default::http://nexus:8081/repository/maven-releases/
